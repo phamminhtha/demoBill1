@@ -1,0 +1,302 @@
+(function (window, undefined) {
+    "use strict";
+    $(window).on("load", function () {
+        if (feather) {
+            feather.replace({
+                width: 14,
+                height: 14,
+            });
+        }
+    });
+
+    $(".navigation-main a").each(function () {
+        var pageUrl = window.location.href.split(/[?#]/)[0];
+        if (this.href == pageUrl) {
+            $(this).parent().addClass("active");
+        }
+    });
+    $(".nav-pills a").each(function () {
+        var pageUrl = window.location.href.split(/[?#]/)[0];
+        if (this.href == pageUrl) {
+            $(this).addClass("active");
+        }
+    });
+    function method_password() {
+        $.validator.addMethod(
+            "password",
+            function (value, element) {
+                return (
+                    this.optional(element) ||
+                    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(value)
+                );
+            },
+            "Hãy nhập mật khẩu từ 8 đến 16 ký tự bao gồm chữ hoa, chữ thường và ít nhất một chữ số"
+        );
+    }
+    function method_username() {
+        $.validator.addMethod(
+            "username",
+            function (value, element) {
+                return (
+                    this.optional(element) ||
+                    /^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$/.test(
+                        value
+                    )
+                );
+            },
+            "Tên đăng nhập không được có dấu và khoảng cách, độ dài tối thiểu là 8 ký tự"
+        );
+    }
+    if ($(".validation-change-pass").length) {
+        method_password();
+        $(".validation-change-pass").validate({
+            rules: {
+                password: {
+                    required: true,
+                    password: true,
+                },
+                new_pass: {
+                    required: true,
+                    password: true,
+                },
+                re_new_pass: {
+                    required: true,
+                    password: true,
+                    equalTo: "#new-pass",
+                },
+            },
+            messages: {
+                password: {
+                    required: "Vui lòng nhập mật khẩu hiện tại",
+                },
+                new_pass: {
+                    required: "Vui lòng nhập mật khẩu mới",
+                },
+                re_new_pass: {
+                    required: "Vui lòng nhập lại mật khẩu mới",
+                    equalTo: "Mật khẩu bạn nhập vào không giống mật khẩu mới",
+                },
+            },
+        });
+    }
+    if ($(".validation-profile").length) {
+        method_username();
+        $(".validation-profile").validate({
+            rules: {
+                full_name: {
+                    required: true,
+                },
+                user_name: {
+                    required: true,
+                    username: true,
+                },
+            },
+            messages: {
+                full_name: {
+                    required: "Vui lòng nhập họ & tên",
+                },
+                user_name: {
+                    required: "Vui lòng nhập tên đăng nhập",
+                },
+            },
+        });
+    }
+    if ($(".validation-register").length) {
+        method_password();
+        method_username();
+        $(".validation-register").validate({
+            rules: {
+                full_name: {
+                    required: true,
+                },
+                user_name: {
+                    required: true,
+                    username: true,
+                },
+                email: {
+                    required: true,
+                    email: true,
+                },
+                ref: {
+                    required: true,
+                },
+                password: {
+                    required: true,
+                    password: true,
+                },
+                re_password: {
+                    required: true,
+                    password: true,
+                    equalTo: "#password",
+                },
+                checkbox: {
+                    required: true,
+                },
+            },
+            messages: {
+                full_name: {
+                    required: "Vui lòng nhập học & tên",
+                },
+                user_name: {
+                    required: "Vui lòng nhập tên đăng nhập",
+                },
+                email: {
+                    required: "Vui lòng nhập email",
+                    email: "Vui lòng nhập đúng định dạng email",
+                },
+                ref: {
+                    required: "Vui lòng nhập mã giới thiệu",
+                },
+                password: {
+                    required: "Vui lòng nhập mật khẩu",
+                },
+                re_password: {
+                    required: "Vui lòng nhập lại mật khẩu",
+                    equalTo: "Mật khẩu nhập lại không giống nhau",
+                },
+                checkbox: {
+                    required: "Vui lòng đồng ý với điều khoản của chúng tôi",
+                },
+            },
+        });
+    }
+    if ($(".validation-login").length) {
+        method_password();
+        method_username();
+        $(".validation-login").validate({
+            rules: {
+                login: {
+                    required: true,
+                },
+                password: {
+                    required: true,
+                },
+            },
+            messages: {
+                login: {
+                    required: "Vui lòng nhập trường này",
+                },
+                password: {
+                    required: "Vui lòng nhập mật khẩu",
+                },
+            },
+        });
+    }
+    if ($(".validation-password").length) {
+        method_password();
+        $(".validation-password").validate({
+            rules: {
+                password: {
+                    required: true,
+                    password: true,
+                },
+                re_password: {
+                    required: true,
+                    password: true,
+                    equalTo: "#reset-password",
+                },
+            },
+            messages: {
+                login: {
+                    required: "Vui lòng nhập mật khẩu mới",
+                },
+                re_password: {
+                    required: "Vui lòng nhập lại mật khẩu mới",
+                    equalTo: "Mật khẩu bạn nhập lại không trùng nhau",
+                },
+            },
+        });
+    }
+    let curDate = new Date();
+    let hours = curDate.getHours();
+    let minutes = curDate.getMinutes() + 1;
+    let day = curDate.getDate();
+    let month = curDate.getMonth() + 1;
+    let year = curDate.getFullYear();
+    if ($(".flatpickr-date").length) {
+        if ($(".flatpickr-date").val()) {
+            $(".flatpickr-date").flatpickr({
+                dateFormat: "Y-m-d",
+            });
+        } else {
+            $(".flatpickr-date").flatpickr({
+                dateFormat: "Y-m-d",
+                defaultDate: year + "-" + month + "-" + day,
+            });
+        }
+    }
+    if ($(".flatpickr-time").length) {
+        if ($(".flatpickr-time").val()) {
+            $(".flatpickr-time").flatpickr({
+                enableTime: true,
+                noCalendar: true,
+                time_24hr: true,
+            });
+        } else {
+            $(".flatpickr-time").flatpickr({
+                enableTime: true,
+                noCalendar: true,
+                defaultDate: hours + ":" + minutes,
+                time_24hr: true,
+            });
+        }
+    }
+    if ($(".select2").length) {
+        $(".select2").each(function () {
+            var $this = $(this);
+            $this.wrap('<div class="position-relative"></div>');
+            $this.select2({
+                dropdownAutoWidth: true,
+                width: "100%",
+                dropdownParent: $this.parent(),
+            });
+        });
+    }
+    $(document).on("input", "input[format-number]", function () {
+        var value = $(this).val().replace(/,/g, ""),
+            number = value.replace(/[^0-9]/g, "");
+        $(this).val(number_format(number));
+    });
+    $(window).on("load", function () {
+        $(".preloader").fadeOut(300);
+    });
+})(window);
+
+function number_format(number) {
+    return Number(number).toLocaleString("en");
+}
+function time_text(time) {
+    let currentDate = new Date();
+
+    // Thời gian cần so sánh
+    let targetDate = new Date(time);
+
+    // Tính toán chênh lệch thời gian (theo mili giây)
+    let timeDiffInMilliseconds = currentDate - targetDate;
+
+    // Chuyển đổi sang đơn vị thời gian lớn hơn (giờ, ngày)
+    let timeDiffInMinutes = Math.floor(timeDiffInMilliseconds / (1000 * 60));
+    let timeDiffInHours = Math.floor(timeDiffInMilliseconds / (1000 * 60 * 60));
+    let timeDiffInDays = Math.floor(
+        timeDiffInMilliseconds / (1000 * 60 * 60 * 24)
+    );
+
+    // Hiển thị kết quả
+    if (timeDiffInMinutes < 60) {
+        return timeDiffInMinutes + " phút trước";
+    } else if (timeDiffInHours < 24) {
+        return timeDiffInHours + " giờ trước";
+    } else {
+        return timeDiffInDays + " ngày trước";
+    }
+}
+function copy(text) {
+    navigator.clipboard
+        .writeText(text)
+        .then(() => {
+            toastr["success"]("", "Sao chép thành công!");
+        })
+        .catch((error) => {
+            toastr["error"]("", "Sao chép thất bại!");
+        });
+}
