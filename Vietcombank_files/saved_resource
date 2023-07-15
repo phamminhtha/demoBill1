@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head translate="no">
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="google" content="notranslate">
+	<meta http-equiv="Cache-Control" content="max-age=0, no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<base href="/">
+
+	<title>Vietcombank</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+
+	<!-- preload -->
+	<link rel="preload" href="./assets/css/bundles.css?v=2.17.0" as="style" />
+	<link rel="preload" href="./assets/css/style.search.css?v=2.17.0" as="style" />
+	<link rel="preload" href="./assets/css/component.css?v=2.17.0" as="style" />
+	<link rel="preload" href="./assets/css/custom.css?v=2.17.0" as="style" />
+	<link rel="preload" href="./assets/css/custom1.css?v=2.17.0" as="style" />
+	<link rel="preload" href="./assets/fonts/Roboto-Regular.ttf" type="font/ttf" crossorigin="anonymous" as="font" />
+	<link rel="preload" href="./assets/fonts/Roboto-Bold.ttf" type="font/ttf" crossorigin="anonymous" as="font" />
+	<link rel="preload" href="./assets/fonts/Roboto-Medium.ttf" type="font/ttf" crossorigin="anonymous" as="font" />
+
+	<link rel="stylesheet" href="./assets/css/bundles.css?v=2.17.0" />
+	<link rel="stylesheet" href="./assets/css/style.search.css?v=2.17.0" />
+	<link rel="stylesheet" href="./assets/css/component.css?v=2.17.0" />
+	<link rel="stylesheet" href="./assets/css/custom.css?v=2.17.0" />
+	<link rel="stylesheet" href="./assets/css/custom1.css?v=2.17.0" />
+	<!-- <link rel="stylesheet" href="./assets/css/welcome/thuong.css?v=2.17.0"> -->
+
+	<!-- scripts -->
+	<script type="text/javascript" src="./assets/js/vendors/jquery/jquery.bundles.js?v=2.17.0"
+			id="__assets_js_vendors_jquery_jquery_bundles_js"></script>
+	<script type="text/javascript" src="./assets/js/vendors/momentjs/momentjs.bundles.js?v=2.17.0"
+			id="__assets_js_vendors_moment_moment_bundle_js"></script>
+
+<link rel="stylesheet" href="styles.12eb754c2863f944f556.css?v=2.17.0"></head>
+
+<body ng-app="App">
+	<a class="skip-link hidden" href="#maincontent">
+		Skip to main
+	</a>
+	<app-root id="maincontent"></app-root>
+	<script>
+		// transfers sessionStorage from one tab to another
+		var sessionStorage_transfer = function (event) {
+			if (!event) {
+				event = window.event;
+			} // ie suq
+			if (!event.newValue) return; // do nothing if no value to work with
+			if (event.key == "getSessionStorage") {
+				// another tab asked for the sessionStorage -> send it
+				localStorage.setItem(
+					"sessionStorage",
+					JSON.stringify(sessionStorage)
+				);
+				// the other tab should now have it, so we're done with it.
+				localStorage.removeItem("sessionStorage"); // <- could do short timeout as well.
+			} else if (
+				event.key == "sessionStorage" &&
+				!sessionStorage.length
+			) {
+				// another tab sent data <- get it
+				var data = JSON.parse(event.newValue);
+				for (var key in data) {
+					sessionStorage.setItem(key, data[key]);
+				}
+			}
+		};
+
+		// listen for changes to localStorage
+		if (window.addEventListener) {
+			window.addEventListener(
+				"storage",
+				sessionStorage_transfer,
+				false
+			);
+		} else {
+			window.attachEvent("onstorage", sessionStorage_transfer);
+		}
+
+		// Ask other tabs for session storage (this is ONLY to trigger event)
+		if (!sessionStorage.length) {
+			localStorage.setItem("getSessionStorage", "foobar");
+			localStorage.removeItem("getSessionStorage", "foobar");
+		}
+	</script>
+<script src="runtime-es2015.92409d7625a778befd91.js?v=2.17.0" type="module"></script><script src="runtime-es5.92409d7625a778befd91.js?v=2.17.0" nomodule defer></script><script src="polyfills-es5.593544345039e782be7a.js?v=2.17.0" nomodule defer></script><script src="polyfills-es2015.1ca20e791aabb644f45e.js?v=2.17.0" type="module"></script><script src="scripts.611f8b21f2846f6eb526.js?v=2.17.0" defer></script><script src="vendor-es2015.de1319f6b821755fc9ad.js?v=2.17.0" type="module"></script><script src="vendor-es5.de1319f6b821755fc9ad.js?v=2.17.0" nomodule defer></script><script src="main-es2015.32bc88fa0114cdf6de8f.js?v=2.17.0" type="module"></script><script src="main-es5.32bc88fa0114cdf6de8f.js?v=2.17.0" nomodule defer></script></body>
+
+</html>

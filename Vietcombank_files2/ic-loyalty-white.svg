@@ -1,0 +1,26 @@
+<svg id="ic-loyalty-yellow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_5" data-name="Rectangle 5" width="24" height="24" transform="translate(0 0)" fill="none"/>
+  <g id="Group_15157" data-name="Group 15157" transform="translate(2.26 2.846)">
+    <g id="Group_15152" data-name="Group 15152" transform="translate(1.492 2.351)">
+      <g id="Group_4211" data-name="Group 4211" transform="translate(0 0)">
+        <path id="Path_16" data-name="Path 16" d="M227.083,12.7l1.091-10.5H227.8L223.7,8.36,220.032-.977H219.9L216.235,8.36l-4.1-6.162h-.373l1.093,10.5Z" transform="translate(-211.759 0.977)" fill="#fff"/>
+        <path id="Path_17" data-name="Path 17" d="M216.892,6.7l-1.755-2.553A3.039,3.039,0,0,1,218.7,2Z" transform="translate(-212.553 0.294)" fill="#fff"/>
+        <path id="Path_23" data-name="Path 23" d="M216.94,6.7,218.7,4.151A3.039,3.039,0,0,0,215.137,2Z" transform="translate(-204.693 0.294)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_15151" data-name="Group 15151" transform="translate(0 0)">
+      <g id="Group_15144" data-name="Group 15144" transform="translate(8.3)">
+        <circle id="Ellipse_38" data-name="Ellipse 38" cx="1.443" cy="1.443" r="1.443" fill="#fff"/>
+      </g>
+      <g id="Group_15147" data-name="Group 15147" transform="translate(0 3.275)">
+        <g id="Group_15145" data-name="Group 15145" transform="translate(0 0)">
+          <circle id="Ellipse_40" data-name="Ellipse 40" cx="1.392" cy="1.392" r="1.392" fill="#fff"/>
+        </g>
+        <g id="Group_15146" data-name="Group 15146" transform="translate(16.703 0)">
+          <circle id="Ellipse_42" data-name="Ellipse 42" cx="1.392" cy="1.392" r="1.392" transform="translate(0)" fill="#fff"/>
+        </g>
+      </g>
+      <rect id="Rectangle_12193" data-name="Rectangle 12193" width="16.705" height="1.991" rx="0.995" transform="translate(1.392 15.705)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

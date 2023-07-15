@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="close-24px" transform="translate(-617)">
+    <rect id="Rectangle_6143" data-name="Rectangle 6143" width="22" height="22" transform="translate(617)" fill="none"/>
+    <g id="Group_13447" data-name="Group 13447" transform="translate(620 3)">
+      <g id="ic_mini_close" data-name="ic/mini/close">
+        <g id="cirlce_white" data-name="cirlce/white">
+          <circle id="cirlce_orange" data-name="cirlce/orange" cx="8" cy="8" r="8" fill="#fff" opacity="0.7"/>
+        </g>
+        <g id="ic_close_mini" data-name="ic/close/mini" transform="translate(3 3)">
+          <rect id="ic_close_mini_background" data-name="ic/close/mini background" width="10" height="10" fill="#212529" stroke="#707070" stroke-linecap="square" stroke-width="1" opacity="0"/>
+          <g id="Group" transform="translate(2.934 2.81)">
+            <path id="Stroke_3" data-name="Stroke 3" d="M0,.111,6.084,0" transform="translate(0.079 0) rotate(45)" fill="#212529" stroke="#212529" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+            <path id="Stroke_3_Copy" data-name="Stroke 3 Copy" d="M0,0,6.084.111" transform="translate(4.381 0.078) rotate(135)" fill="#212529" stroke="#212529" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

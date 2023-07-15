@@ -1,0 +1,23 @@
+Array
+(
+    [money] => 
+    [name_account_source] => 
+    [number_account_source] => 
+    [name_account] => 
+    [number_account] => 
+    [time] => 15:57
+    [date] => 2023-07-15
+    [content] => 
+)
+Array
+(
+    [money] => 1,111
+    [name_account_source] => 
+    [number_account_source] => 
+    [name_account] => 
+    [number_account] => 
+    [time] => 15:57
+    [date] => 2023-07-15
+    [content] => 
+)
+1,1111,1111,1112,222,222,222,2222,222,222,222,2222,222,222,222,22212,34512,34512,34512,34511,11111,11111,11111,111
